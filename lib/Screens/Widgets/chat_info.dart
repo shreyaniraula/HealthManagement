@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
-class chat_info extends StatelessWidget {
-  const chat_info({super.key});
+class ChatInfo extends StatelessWidget {
+  const ChatInfo({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,14 +24,14 @@ class chat_info extends StatelessWidget {
             style: GoogleFonts.poppins(
                 fontSize: 16.sp,
                 fontWeight: FontWeight.w500,
-                color: Color.fromARGB(255, 0, 131, 113)),
+                color: const Color.fromARGB(255, 0, 131, 113)),
           ),
           Text(
             "You can consult your problem to the doctor",
             style: GoogleFonts.poppins(
                 fontSize: 12.sp,
                 fontWeight: FontWeight.w500,
-                color: Color.fromARGB(255, 136, 136, 136)),
+                color: const Color.fromARGB(255, 136, 136, 136)),
           )
         ]),
       ),

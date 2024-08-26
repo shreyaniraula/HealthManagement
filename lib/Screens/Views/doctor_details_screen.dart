@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:medical/Screens/Views/appointment.dart';
-import 'package:medical/Screens/Views/find_doctor.dart';
 import 'package:medical/Screens/Widgets/date_select.dart';
-import 'package:medical/Screens/Widgets/doctorList.dart';
-import 'package:medical/Screens/Widgets/list_doctor1.dart';
+import 'package:medical/Screens/Widgets/doctor_list.dart';
 import 'package:medical/Screens/Widgets/time_select.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 class DoctorDetails extends StatefulWidget {
+  const DoctorDetails({super.key});
+
   @override
   _DoctorDetailsState createState() => _DoctorDetailsState();
 }
@@ -73,7 +73,7 @@ class _DoctorDetailsState extends State<DoctorDetails> {
                 const SizedBox(
                   height: 5,
                 ),
-                doctorList(
+                const DoctorList(
                   distance: "800m away",
                   image: "lib/icons/male-doctor.png",
                   maintext: "Dr. Marcus Horizon",
@@ -114,8 +114,8 @@ class _DoctorDetailsState extends State<DoctorDetails> {
                           showExtendedText ? "Read less" : "Read more",
                           style: TextStyle(
                             color: showExtendedText
-                                ? Color.fromARGB(255, 1, 128, 111)
-                                : Color.fromARGB(255, 1, 128,
+                                ? const Color.fromARGB(255, 1, 128, 111)
+                                : const Color.fromARGB(255, 1, 128,
                                     111), // Change color based on visibility
                           ),
                         ),
@@ -123,26 +123,26 @@ class _DoctorDetailsState extends State<DoctorDetails> {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 15),
-                  child: Container(
+                  child: SizedBox(
                     height: MediaQuery.of(context).size.height * 0.11,
                     width: MediaQuery.of(context).size.width * 3,
                     child: ListView(
-                      physics: BouncingScrollPhysics(),
+                      physics: const BouncingScrollPhysics(),
                       scrollDirection: Axis.horizontal,
-                      children: [
-                        date_Select(date: "21", maintext: "Mon"),
-                        date_Select(date: "22", maintext: "Tue"),
-                        date_Select(date: "23", maintext: "Wed"),
-                        date_Select(date: "24", maintext: "Thu"),
-                        date_Select(date: "25", maintext: "Fri"),
-                        date_Select(date: "26", maintext: "Sat"),
-                        date_Select(date: "27", maintext: "Sun"),
-                        date_Select(date: "28", maintext: "Mon"),
+                      children: const [
+                        DateSelect(date: "21", maintext: "Mon"),
+                        DateSelect(date: "22", maintext: "Tue"),
+                        DateSelect(date: "23", maintext: "Wed"),
+                        DateSelect(date: "24", maintext: "Thu"),
+                        DateSelect(date: "25", maintext: "Fri"),
+                        DateSelect(date: "26", maintext: "Sat"),
+                        DateSelect(date: "27", maintext: "Sun"),
+                        DateSelect(date: "28", maintext: "Mon"),
                       ],
                     ),
                   ),
@@ -161,53 +161,53 @@ class _DoctorDetailsState extends State<DoctorDetails> {
                   height: 20,
                 ),
                 //Time select container importing widget from widgets/times_select
-                Container(
+                SizedBox(
                   height: MediaQuery.of(context).size.height * 0.2400,
                   width: MediaQuery.of(context).size.width * 0.9,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       //In main container 2 Columns use
-                      Container(
+                      SizedBox(
                         height: MediaQuery.of(context).size.height * 0.2500,
                         width: MediaQuery.of(context).size.width * 0.2900,
-                        child: Column(
+                        child: const Column(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              time_select(mainText: "09:00 AM"),
-                              time_select(mainText: "01:00 AM"),
-                              time_select(mainText: "04:00 AM"),
-                              time_select(mainText: "07:00 AM"),
+                              TimeSelect(mainText: "09:00 AM"),
+                              TimeSelect(mainText: "01:00 AM"),
+                              TimeSelect(mainText: "04:00 AM"),
+                              TimeSelect(mainText: "07:00 AM"),
                             ]),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 10,
                       ),
-                      Container(
+                      SizedBox(
                         height: MediaQuery.of(context).size.height * 0.2500,
                         width: MediaQuery.of(context).size.width * 0.2500,
-                        child: Column(
+                        child: const Column(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              time_select(mainText: "10:00 PM"),
-                              time_select(mainText: "02:00 PM"),
-                              time_select(mainText: "07:00 PM"),
-                              time_select(mainText: "09:00 PM"),
+                              TimeSelect(mainText: "10:00 PM"),
+                              TimeSelect(mainText: "02:00 PM"),
+                              TimeSelect(mainText: "07:00 PM"),
+                              TimeSelect(mainText: "09:00 PM"),
                             ]),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 10,
                       ),
-                      Container(
+                      SizedBox(
                         height: MediaQuery.of(context).size.height * 0.2500,
                         width: MediaQuery.of(context).size.width * 0.2500,
-                        child: Column(
+                        child: const Column(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              time_select(mainText: "11:00 AM"),
-                              time_select(mainText: "03:00 PM"),
-                              time_select(mainText: "08:00 PM"),
-                              time_select(mainText: "10:00 AM"),
+                              TimeSelect(mainText: "11:00 AM"),
+                              TimeSelect(mainText: "03:00 PM"),
+                              TimeSelect(mainText: "08:00 PM"),
+                              TimeSelect(mainText: "10:00 AM"),
                             ]),
                       ),
                     ],
@@ -215,7 +215,7 @@ class _DoctorDetailsState extends State<DoctorDetails> {
                 ),
               ],
             ),
-            Container(
+            SizedBox(
               height: 80,
               width: double.infinity,
               child: Padding(
@@ -243,13 +243,13 @@ class _DoctorDetailsState extends State<DoctorDetails> {
                               context,
                               PageTransition(
                                   type: PageTransitionType.rightToLeft,
-                                  child: appointment()));
+                                  child: const Appointment()));
                         },
                         child: Container(
                           height: MediaQuery.of(context).size.height * 0.06,
                           width: MediaQuery.of(context).size.width * 0.6300,
                           decoration: BoxDecoration(
-                            color: Color.fromARGB(255, 2, 179, 149),
+                            color: const Color.fromARGB(255, 2, 179, 149),
                             borderRadius: BorderRadius.circular(30),
                           ),
                           child: Row(

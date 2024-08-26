@@ -1,20 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:medical/Screens/Widgets/shedule_card.dart';
-import 'package:responsive_sizer/responsive_sizer.dart';
 
-class shedule_tab1 extends StatelessWidget {
-  const shedule_tab1({super.key});
+class ScheduleTab1 extends StatelessWidget {
+  const ScheduleTab1({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       backgroundColor: Colors.white,
       body: Column(children: [
-        const SizedBox(
+        SizedBox(
           height: 30,
         ),
-        shedule_card(
+        ScheduleCard(
           confirmation: "Confirmed",
           mainText: "Dr. Marcus Horizon",
           subText: "Chardiologist",
@@ -22,10 +20,10 @@ class shedule_tab1 extends StatelessWidget {
           time: "10:30 AM",
           image: "lib/icons/male-doctor.png",
         ),
-        const SizedBox(
+        SizedBox(
           height: 20,
         ),
-        shedule_card(
+        ScheduleCard(
           confirmation: "Confirmed",
           mainText: "Dr. Marcus Horizon",
           subText: "Chardiologist",

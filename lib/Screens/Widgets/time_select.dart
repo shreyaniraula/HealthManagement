@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
-class time_select extends StatefulWidget {
+class TimeSelect extends StatefulWidget {
   final String mainText;
 
-  time_select({required this.mainText});
+  const TimeSelect({super.key, required this.mainText});
 
   @override
-  _time_selectState createState() => _time_selectState();
+  _TimeSelectState createState() => _TimeSelectState();
 }
 
-class _time_selectState extends State<time_select> {
+class _TimeSelectState extends State<TimeSelect> {
   bool isSelected = false;
 
   void toggleSelection() {
@@ -40,7 +40,7 @@ class _time_selectState extends State<time_select> {
               style: TextStyle(
                   color: isSelected
                       ? Colors.white
-                      : Color.fromARGB(255, 85, 85, 85),
+                      : const Color.fromARGB(255, 85, 85, 85),
                   fontWeight: FontWeight.w500),
             ),
           ],

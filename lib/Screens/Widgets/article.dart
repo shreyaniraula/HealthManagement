@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
-class article extends StatelessWidget {
+class Article extends StatelessWidget {
   final String mainText;
   final String dateText;
   final String duration;
   final String image;
 
-  article({
+  const Article({super.key, 
     required this.mainText,
     required this.dateText,
     required this.duration,
@@ -32,7 +32,7 @@ class article extends StatelessWidget {
           const SizedBox(
             width: 5,
           ),
-          Container(
+          SizedBox(
             height: MediaQuery.of(context).size.height * 0.5,
             width: MediaQuery.of(context).size.width * 0.1200,
             child: Image.asset(image),
@@ -40,7 +40,7 @@ class article extends StatelessWidget {
           const SizedBox(
             width: 15,
           ),
-          Container(
+          SizedBox(
             height: MediaQuery.of(context).size.height * 0.05,
             width: MediaQuery.of(context).size.width * 0.5,
             child:
@@ -66,7 +66,7 @@ class article extends StatelessWidget {
                       style: GoogleFonts.poppins(
                         fontSize: 12.sp,
                         fontWeight: FontWeight.w500,
-                        color: Color.fromARGB(255, 0, 136, 102),
+                        color: const Color.fromARGB(255, 0, 136, 102),
                       ),
                     ),
                   ],
@@ -77,7 +77,7 @@ class article extends StatelessWidget {
           const SizedBox(
             width: 25,
           ),
-          Container(
+          SizedBox(
             height: MediaQuery.of(context).size.height * 0.07,
             width: MediaQuery.of(context).size.width * 0.09,
             child: Image.asset(

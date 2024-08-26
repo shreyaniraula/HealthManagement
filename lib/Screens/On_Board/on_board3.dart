@@ -2,21 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
-class on_board3 extends StatelessWidget {
-  const on_board3({super.key});
+class OnBoard3 extends StatelessWidget {
+  const OnBoard3({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       color: Colors.white,
       child: Column(children: [
-        SizedBox(
+        const SizedBox(
           height: 40,
         ),
         Container(
           height: MediaQuery.of(context).size.height * 0.6,
           width: MediaQuery.of(context).size.width * 0.8,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
               image: DecorationImage(
                   alignment: Alignment.bottomCenter,
                   image: AssetImage(
@@ -34,12 +34,12 @@ class on_board3 extends StatelessWidget {
                 width: MediaQuery.of(context).size.width * 0.8,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12),
-                  gradient: LinearGradient(
+                  gradient: const LinearGradient(
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
                     colors: [
                       Color.fromARGB(255, 247, 247, 247),
-                      const Color.fromARGB(255, 255, 255, 255),
+                      Color.fromARGB(255, 255, 255, 255),
                     ],
                   ),
                 ),
@@ -50,7 +50,7 @@ class on_board3 extends StatelessWidget {
                     style: GoogleFonts.inter(
                         fontSize: 18.sp,
                         fontWeight: FontWeight.bold,
-                        color: Color.fromARGB(255, 37, 37, 37)),
+                        color: const Color.fromARGB(255, 37, 37, 37)),
                   ),
                 ),
               )

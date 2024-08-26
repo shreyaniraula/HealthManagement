@@ -2,19 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
-class tab1 extends StatelessWidget {
-  const tab1({super.key});
+class Tab1 extends StatelessWidget {
+  const Tab1({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Column(children: [
-        SizedBox(
+        const SizedBox(
           height: 40,
         ),
         Center(
-          child: Container(
+          child: SizedBox(
             height: MediaQuery.of(context).size.height * 0.1,
             width: MediaQuery.of(context).size.width * 0.9,
             child: TextField(
@@ -25,18 +25,16 @@ class tab1 extends StatelessWidget {
               textAlignVertical: TextAlignVertical.center,
               decoration: InputDecoration(
                   focusColor: Colors.black26,
-                  fillColor: Color.fromARGB(255, 247, 247, 247),
+                  fillColor: const Color.fromARGB(255, 247, 247, 247),
                   filled: true,
                   prefixIcon: Padding(
                     padding: const EdgeInsets.symmetric(
                       horizontal: 10,
                     ),
-                    child: Container(
-                      child: Image.asset("lib/icons/email.png"),
-                    ),
+                    child: Image.asset("lib/icons/email.png"),
                   ),
                   prefixIconColor: const Color.fromARGB(255, 3, 190, 150),
-                  label: Text("Enter your email"),
+                  label: const Text("Enter your email"),
                   floatingLabelBehavior: FloatingLabelBehavior.never,
                   border: OutlineInputBorder(
                     borderSide: BorderSide.none,
@@ -45,7 +43,7 @@ class tab1 extends StatelessWidget {
             ),
           ),
         ),
-        Container(
+        SizedBox(
           height: MediaQuery.of(context).size.height * 0.05,
           width: MediaQuery.of(context).size.width * 01,
           child: ElevatedButton(
@@ -53,7 +51,7 @@ class tab1 extends StatelessWidget {
               // Perform verification or other actions here
             },
             style: ElevatedButton.styleFrom(
-              primary: Color.fromARGB(255, 3, 190, 150),
+              backgroundColor: const Color.fromARGB(255, 3, 190, 150),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(30),
               ),
@@ -63,7 +61,7 @@ class tab1 extends StatelessWidget {
               textAlign: TextAlign.center,
               style: GoogleFonts.poppins(
                 fontSize: 18.sp,
-                color: Color.fromARGB(255, 255, 255, 255),
+                color: const Color.fromARGB(255, 255, 255, 255),
                 fontWeight: FontWeight.w500,
                 letterSpacing: 0,
               ),

@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:medical/Screens/Login-Signup/login.dart';
-import 'package:medical/Screens/Login-Signup/login_signup.dart';
-import 'package:medical/Screens/Widgets/Auth_text_field.dart';
+import 'package:medical/Screens/Widgets/auth_textfield.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
-class register extends StatelessWidget {
-  const register({super.key});
+class Register extends StatelessWidget {
+  const Register({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +15,7 @@ class register extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         leading: IconButton(
-          icon: Container(
+          icon: SizedBox(
               height: MediaQuery.of(context).size.height * 0.06,
               width: MediaQuery.of(context).size.width * 0.06,
               child: Image.asset("lib/icons/back2.png")),
@@ -25,7 +23,8 @@ class register extends StatelessWidget {
             Navigator.push(
                 context,
                 PageTransition(
-                    type: PageTransitionType.leftToRight, child: login()));
+                    type: PageTransitionType.leftToRight,
+                    child: const Login()));
           },
         ),
         title: Text(
@@ -47,7 +46,7 @@ class register extends StatelessWidget {
             height: 40,
           ),
           Center(
-            child: Container(
+            child: SizedBox(
               height: MediaQuery.of(context).size.height * 0.1,
               width: MediaQuery.of(context).size.width * 0.9,
               child: TextField(
@@ -58,15 +57,13 @@ class register extends StatelessWidget {
                 textAlignVertical: TextAlignVertical.center,
                 decoration: InputDecoration(
                     focusColor: Colors.black26,
-                    fillColor: Color.fromARGB(255, 247, 247, 247),
+                    fillColor: const Color.fromARGB(255, 247, 247, 247),
                     filled: true,
                     prefixIcon: Padding(
                       padding: const EdgeInsets.symmetric(
                         horizontal: 10,
                       ),
-                      child: Container(
-                        child: Image.asset("lib/icons/person.png"),
-                      ),
+                      child: Image.asset("lib/icons/person.png"),
                     ),
                     prefixIconColor: const Color.fromARGB(255, 3, 190, 150),
                     label: Text(
@@ -84,11 +81,11 @@ class register extends StatelessWidget {
           const SizedBox(
             height: 5,
           ),
-          Auth_text_field(text: "Enter your name", icon: "lib/icons/email.png"),
+          const AuthTextfield(text: "Enter your name", icon: "lib/icons/email.png"),
           const SizedBox(
             height: 5,
           ),
-          Auth_text_field(
+          const AuthTextfield(
               text: "Enter your password", icon: "lib/icons/lock.png"),
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -106,10 +103,10 @@ class register extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 30,
           ),
-          Container(
+          SizedBox(
             height: MediaQuery.of(context).size.height * 0.05,
             width: MediaQuery.of(context).size.width * 0.9,
             child: ElevatedButton(
@@ -117,7 +114,7 @@ class register extends StatelessWidget {
                 // Perform verification or other actions here
               },
               style: ElevatedButton.styleFrom(
-                primary: Color.fromARGB(255, 3, 190, 150),
+                backgroundColor: const Color.fromARGB(255, 3, 190, 150),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(30),
                 ),
@@ -127,14 +124,14 @@ class register extends StatelessWidget {
                 textAlign: TextAlign.center,
                 style: GoogleFonts.poppins(
                   fontSize: 18.sp,
-                  color: Color.fromARGB(255, 255, 255, 255),
+                  color: const Color.fromARGB(255, 255, 255, 255),
                   fontWeight: FontWeight.w500,
                   letterSpacing: 0,
                 ),
               ),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 30,
           ),
           Row(
@@ -151,7 +148,7 @@ class register extends StatelessWidget {
                       context,
                       PageTransition(
                           type: PageTransitionType.bottomToTop,
-                          child: login()));
+                          child: const Login()));
                 },
                 child: Text(
                   "Sign in",

@@ -1,22 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:medical/Screens/Views/shedule_tab1.dart';
-import 'package:medical/Screens/Views/shedule_tab2.dart';
+import 'package:medical/Screens/Views/schedule_tab2.dart';
 import 'package:medical/Screens/Widgets/TabbarPages/message_tab_all.dart';
-import 'package:medical/Screens/Widgets/TabbarPages/tab1.dart';
-import 'package:medical/Screens/Widgets/TabbarPages/tab2.dart';
-import 'package:medical/Screens/Login-Signup/login.dart';
-import 'package:page_transition/page_transition.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
-class message_screen extends StatefulWidget {
-  const message_screen({Key? key}) : super(key: key);
+class MessageScreen extends StatefulWidget {
+  const MessageScreen({Key? key}) : super(key: key);
 
   @override
   _TabBarExampleState createState() => _TabBarExampleState();
 }
 
-class _TabBarExampleState extends State<message_screen>
+class _TabBarExampleState extends State<MessageScreen>
     with SingleTickerProviderStateMixin {
   late TabController tabController;
 
@@ -60,12 +55,12 @@ class _TabBarExampleState extends State<message_screen>
         backgroundColor: Colors.white,
       ),
       body: SingleChildScrollView(
-        physics: NeverScrollableScrollPhysics(),
+        physics: const NeverScrollableScrollPhysics(),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 00),
           child: Column(
             children: [
-              Container(
+              SizedBox(
                 height: MediaQuery.of(context).size.height,
                 child: Column(
                   children: [
@@ -76,24 +71,25 @@ class _TabBarExampleState extends State<message_screen>
                         width: MediaQuery.of(context).size.height,
                         decoration: BoxDecoration(
                           border: Border.all(
-                              color: Color.fromARGB(255, 235, 235, 235)),
-                          color: Color.fromARGB(255, 241, 241, 241),
+                              color: const Color.fromARGB(255, 235, 235, 235)),
+                          color: const Color.fromARGB(255, 241, 241, 241),
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: Column(
                           children: [
                             Padding(
-                              padding: EdgeInsets.all(5),
+                              padding: const EdgeInsets.all(5),
                               child: TabBar(
                                 indicator: BoxDecoration(
-                                  color: Color.fromARGB(255, 5, 185, 155),
+                                  color: const Color.fromARGB(255, 5, 185, 155),
                                   borderRadius: BorderRadius.circular(8),
                                 ),
                                 indicatorColor:
                                     const Color.fromARGB(255, 241, 241, 241),
                                 unselectedLabelColor:
                                     const Color.fromARGB(255, 32, 32, 32),
-                                labelColor: Color.fromARGB(255, 255, 255, 255),
+                                labelColor:
+                                    const Color.fromARGB(255, 255, 255, 255),
                                 controller: tabController,
                                 tabs: const [
                                   Tab(
@@ -113,9 +109,9 @@ class _TabBarExampleState extends State<message_screen>
                       ),
                     ),
                     TabBarView(controller: tabController, children: const [
-                      message_tab_all(),
-                      shedule_tab2(),
-                      shedule_tab2(),
+                      MessageTabAll(),
+                      ScheduleTab2(),
+                      ScheduleTab2(),
                     ])
                   ],
                 ),
